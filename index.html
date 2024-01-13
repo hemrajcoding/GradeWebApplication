@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grade Web application</title>
+	<style type="text/css">
+		body{
+			background-color: #495250;
+		}
+		div{
+			background-color: deepskyblue;
+			color: white;
+			text-align: center;
+			width: 600px;
+			margin-left: 300px;
+			border-radius: 10px;
+			height: 830px;
+		}
+		fieldset{
+			width: 550px;
+			margin-left: 10px;
+			height: 790px;
+;
+		}
+		input{
+			width: 400px;
+			padding: 8px;
+			border-top-left-radius: 50px;
+			border-bottom-right-radius: 50px;
+			font-size: 20px;
+			color: red;
+			background-color: gold;
+		}
+		button{
+			width: 150px;
+			padding: 8px;
+			background-color: green;
+			color: white;
+			font-size: 15px;
+			border: none;
+			border-radius: 8px;
+		}
+		button:hover{
+			font-size: 18px;
+			padding: 10px;
+			background-color: blue;
+		}
+		legend{
+			font-size: 29px;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<fieldset>	
+	<legend>Grade Application</legend>
+	<input type="text" placeholder="English" id="en"><br><br>
+	<input type="text" placeholder="math" id="ma"><br><br>
+	<input type="text" placeholder="social" id="so"><br><br>
+	<input type="text" placeholder="nepali" id="ne"><br><br>
+	<input type="text" placeholder="science" id="sc"><br><br>
+	<input type="text" placeholder="health" id="he"><br><br>
+	<input type="text" placeholder="population" id="po"><br><br>
+	<input type="text" placeholder="economic" id="ec"><br><br>
+	<input type="text" placeholder="GK" id="gk"><br><br>
+	<button onclick="per()">Percentage</button><br><br>
+	<input type="text" id="per"><br><br>
+	<button onclick="gra()">Grade</button><br><br>
+	<input type="text" id="grade">
+	
+
+</fieldset>
+</div>
+
+<script type="text/javascript">
+	// this is percentage function
+		function per(){
+			var english = parseFloat(document.getElementById("en").value);
+			var math = parseFloat(document.getElementById("ma").value);
+			var social = parseFloat(document.getElementById("so").value);
+			var nepali = parseFloat(document.getElementById("ne").value);
+			var science = parseFloat(document.getElementById("sc").value);
+			var health = parseFloat(document.getElementById("he").value);
+			var population = parseFloat(document.getElementById("po").value);
+			var economic = parseFloat(document.getElementById("ec").value);
+			var gk = parseFloat(document.getElementById("gk").value);
+			var total = english+math+social+nepali+science+health+population+economic+gk;
+			var percentage = (total*100)/900;
+			document.getElementById("per").value = percentage;
+
+		}
+		// this is grade function
+		function gra(){
+			var english = parseFloat(document.getElementById("en").value);
+			var math = parseFloat(document.getElementById("ma").value);
+			var social = parseFloat(document.getElementById("so").value);
+			var nepali = parseFloat(document.getElementById("ne").value);
+			var science = parseFloat(document.getElementById("sc").value);
+			var health = parseFloat(document.getElementById("he").value);
+			var population = parseFloat(document.getElementById("po").value);
+			var economic = parseFloat(document.getElementById("ec").value);
+			var gk = parseFloat(document.getElementById("gk").value);
+			var total = english+math+social+nepali+science+health+population+economic+gk;
+			var percentage = (total*100)/900;
+			if (percentage>90) {
+				var a = "A+"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>80){
+				var a = "A"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>70){
+				var a = "B+"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>60){
+				var a = "B"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>50){
+				var a = "C+"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>40){
+				var a = "C"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>35){
+				var a = "D+"
+				document.getElementById("grade").value =a;
+			}
+			else if(percentage>20){
+				var a = "D"
+				document.getElementById("grade").value =a;
+			}
+			else{
+				var a ="Non Grade"
+				document.getElementById("grade").value =a;
+			}
+
+
+
+		}
+
+
+</script>
+</body>
+</html>
